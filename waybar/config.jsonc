@@ -1,0 +1,60 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 5,
+  "margin-top": 5,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["hyprland/language", "cpu", "memory", "pulseaudio", "network", "battery"],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "all_outputs": true,
+    "active_only": false,
+    "persistent-workspaces": {
+      "*": 10
+    }
+  },
+
+  "hyprland/language": {
+    "format": " {}",
+    "format-en": "us",
+    "format-ru": "ru",
+    "format-tr": "tr",
+    "tooltip": false, 
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+  },
+
+  "clock": {
+    "format": "  {:%H:%M}"
+  },
+
+  "cpu": {
+    "format": " {usage}%"
+  },
+
+  "memory": {
+    "format": " {percentage}%"
+  },
+
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": " muted",
+    "on-click": "pavucontrol",
+  },
+
+  "network": {
+    "format-wifi": " {signalStrength}%",
+    "format-ethernet": "󰈀 connected",
+    "format-disconnected": "⚠️ offline",
+    "tooltip": true,
+    "on-click": "kitty -e nmtui",
+  },
+
+  "battery": {
+    "format": " {capacity}%"
+  }
+}
