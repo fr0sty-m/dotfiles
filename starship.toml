@@ -1,0 +1,24 @@
+format = """
+[](#ff6b6b)$username[](fg:#ff6b6b bg:#4dabf7)$hostname[](fg:#4dabf7 bg:#ffd43b)$directory[](fg:#ffd43b)
+$character
+"""
+
+[username]
+style_user = "bg:#ff6b6b fg:#1e1e2e bold"
+format = "[ $user ]($style)"
+show_always = true
+
+[hostname]
+style = "bg:#4dabf7 fg:#1e1e2e bold"
+format = "[ $hostname ]($style)"
+ssh_only = false
+
+[directory]
+style = "bg:#ffd43b fg:#1e1e2e bold"
+format = "[ $path ]($style)"
+truncation_length = 0
+truncate_to_repo = false
+
+[character]
+success_symbol = "[➜](bold #69db7c)"
+error_symbol = "[➜](bold red)"

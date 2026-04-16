@@ -1,22 +1,27 @@
 #!/bin/bash
 
-DIR="/home/fr0sty/wallpapers"
+DIR="$HOME/wallpapers"
 
 set_wallpaper() {
   IMG=$(find "$DIR" -type f | shuf -n 1)
 
+  # önce preload
   hyprctl hyprpaper preload "$IMG"
 
-  for MON in $(hyprctl monitors | grep "Monitor" | awk '{print $2}'); do
+  # monitörlere uygula
+  hyprctl monitors -j | jq -r '.[].name' | while read -r MON; do
     hyprctl hyprpaper wallpaper "$MON,$IMG"
   done
+
+  # eski wallpaperları temizle (çok önemli)
+  hyprctl hyprpaper unload unused
 }
 
-# 🔥 ilk açılışta hemen uygula
-sleep 2
+# hyprpaper hazır olana kadar bekle
+sleep 1
+
 set_wallpaper
 
-# 🔁 sonra loop
 while true; do
   sleep 300
   set_wallpaper

@@ -50,6 +50,13 @@ window#waybar {
   background: rgba(49, 50, 68, 0.5);
 }
 
+#custom-media {
+  padding: 4px 10px;
+  margin: 0 4px;
+  border-radius: 8px;
+  min-width: 150px;
+}
+
 /* hover efekti */
 #language:hover,
 #clock:hover,
@@ -57,7 +64,8 @@ window#waybar {
 #memory:hover,
 #battery:hover,
 #network:hover,
-#pulseaudio:hover {
+#pulseaudio:hover,
+#custom-media:hover {
   background: rgba(137, 180, 250, 0.3);
 }
 

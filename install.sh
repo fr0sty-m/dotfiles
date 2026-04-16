@@ -31,12 +31,13 @@ mkdir -p "$USER_HOME/.config"
 link "$DOTFILES_DIR/hypr" "$USER_HOME/.config/hypr"
 link "$DOTFILES_DIR/kitty" "$USER_HOME/.config/kitty"
 link "$DOTFILES_DIR/waybar" "$USER_HOME/.config/waybar"
+link "$DOTFILES_DIR/rofi" "$USER_HOME/.config/rofi"
 
 # ------------------------
 # WALLPAPERS (DIRECT FOLDER)
 # ------------------------
 
-WALL_DIR="$USER_HOME/wallpaper"
+WALL_DIR="$USER_HOME/wallpapers"
 
 echo "Setting up wallpaper folder..."
 

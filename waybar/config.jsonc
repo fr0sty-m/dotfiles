@@ -6,7 +6,7 @@
   "margin-left": 10,
   "margin-right": 10,
 
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "custom/media"],
   "modules-center": ["clock"],
   "modules-right": ["hyprland/language", "cpu", "memory", "pulseaudio", "network", "battery"],
 
@@ -15,9 +15,19 @@
     "all_outputs": true,
     "active_only": false,
     "persistent-workspaces": {
-      "*": 10
+      "*": 8
     }
   },
+
+"custom/media": {
+    "format": "{}",
+    "return-type": "json",
+    "max-length": 35,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' --follow",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+},
 
   "hyprland/language": {
     "format": " {}",
