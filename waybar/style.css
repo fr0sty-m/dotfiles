@@ -50,7 +50,7 @@ window#waybar {
   background: rgba(49, 50, 68, 0.5);
 }
 
-#custom-media {
+#custom-music {
   padding: 4px 10px;
   margin: 0 4px;
   border-radius: 8px;
@@ -65,7 +65,7 @@ window#waybar {
 #battery:hover,
 #network:hover,
 #pulseaudio:hover,
-#custom-media:hover {
+#custom-music:hover {
   background: rgba(137, 180, 250, 0.3);
 }
 

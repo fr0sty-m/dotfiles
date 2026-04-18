@@ -6,7 +6,7 @@
   "margin-left": 10,
   "margin-right": 10,
 
-  "modules-left": ["hyprland/workspaces", "custom/media"],
+  "modules-left": ["hyprland/workspaces", "custom/music"],
   "modules-center": ["clock"],
   "modules-right": ["hyprland/language", "cpu", "memory", "pulseaudio", "network", "battery"],
 
@@ -19,11 +19,11 @@
     }
   },
 
-"custom/media": {
+"custom/music": {
     "format": "{}",
     "return-type": "json",
-    "max-length": 35,
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' --follow",
+    "max-length": 40,
+    "exec": "waybar-module-music -m -t 15 -a 25 --effect-speed 250",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous"
@@ -39,7 +39,9 @@
   },
 
   "clock": {
-    "format": "  {:%H:%M}"
+    "format": "  {:%H:%M}",
+    "tooltip": false,
+    "format-alt": "🗓️ {:%d-%m-%Y}" // Tıkladığında tarihe dönüşmesini istersen
   },
 
   "cpu": {
