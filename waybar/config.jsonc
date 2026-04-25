@@ -10,24 +10,37 @@
   "modules-center": ["clock"],
   "modules-right": ["hyprland/language", "cpu", "memory", "pulseaudio", "network", "battery"],
 
+  // "hyprland/workspaces": {
+  //   "format": "{name}",
+  //   "all_outputs": true,
+  //   "active_only": false,
+  //   "persistent-workspaces": {
+  //     "*": 8
+  //   }
+  // },
+
   "hyprland/workspaces": {
     "format": "{name}",
     "all_outputs": true,
     "active_only": false,
-    "persistent-workspaces": {
-      "*": 8
-    }
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format-window-separator": "\n", // Pencereleri alt alta listeler
+    "window-rewrite": {}, // İstersen pencere isimlerini kısaltabilirsin
+    "tooltip": true, // Tooltip'i aktif et
+    "tooltip-format": "{active_client}" // Sadece aktif pencereyi veya listeyi gösterir
   },
 
-"custom/music": {
-    "format": "{}",
-    "return-type": "json",
-    "max-length": 40,
-    "exec": "waybar-module-music -m -t 15 -a 25 --effect-speed 250",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous"
-},
+  "custom/music": {
+      "format": "{}",
+      "return-type": "json",
+      "max-length": 40,
+      "exec": "waybar-module-music -m -t 15 -a 25 --effect-speed 250",
+      "on-click": "playerctl play-pause",
+      "on-scroll-up": "playerctl next",
+      "on-scroll-down": "playerctl previous"
+  },
 
   "hyprland/language": {
     "format": " {}",

@@ -36,6 +36,16 @@ window#waybar {
   background: rgba(137, 180, 250, 0.3);
 }
 
+#workspaces button.occupied {
+    color: #fab387; /* Tokyo Night turuncusu gibi bir renk */
+}
+
+/* Seçili olan workspace */
+#workspaces button.active {
+    background: #89b4fa;
+    color: #1e1e2e;
+}
+
 /* modules */
 #language,
 #clock,
