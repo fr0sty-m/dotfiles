@@ -5,6 +5,19 @@ set -e
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 USER_HOME="$HOME"
 
+# yay kurulu değilse yükle (isteğe bağlı ama güvenli)
+if ! command -v yay &>/dev/null; then
+  echo "could not found yay, installing..."
+  sudo pacman -S --needed git base-devel
+  git clone https://aur.archlinux.org/yay.git
+  cd yay && makepkg -si && cd ..
+  rm -rf yay
+fi
+
+# Paketleri yükle
+echo "Installing hyprland packages..."
+yay -S --needed mako libnotify jq socat waybar hyprpaper rofi hyprshot wl-clipboard
+
 echo "Installing dotfiles..."
 
 backup() {
