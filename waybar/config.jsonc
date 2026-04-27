@@ -29,7 +29,8 @@
     "format-window-separator": "\n", // Pencereleri alt alta listeler
     "window-rewrite": {}, // İstersen pencere isimlerini kısaltabilirsin
     "tooltip": true, // Tooltip'i aktif et
-    "tooltip-format": "{active_client}" // Sadece aktif pencereyi veya listeyi gösterir
+    "tooltip-format": "{active_client}", // Sadece aktif pencereyi veya listeyi gösterir
+    "show-special": true,
   },
 
   "custom/music": {
