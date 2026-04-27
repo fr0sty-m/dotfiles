@@ -10,15 +10,6 @@
   "modules-center": ["clock"],
   "modules-right": ["hyprland/language", "cpu", "memory", "pulseaudio", "network", "battery"],
 
-  // "hyprland/workspaces": {
-  //   "format": "{name}",
-  //   "all_outputs": true,
-  //   "active_only": false,
-  //   "persistent-workspaces": {
-  //     "*": 8
-  //   }
-  // },
-
   "hyprland/workspaces": {
     "format": "{name}",
     "all_outputs": true,
@@ -26,10 +17,10 @@
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
-    "format-window-separator": "\n", // Pencereleri alt alta listeler
-    "window-rewrite": {}, // İstersen pencere isimlerini kısaltabilirsin
-    "tooltip": true, // Tooltip'i aktif et
-    "tooltip-format": "{active_client}", // Sadece aktif pencereyi veya listeyi gösterir
+    "format-window-separator": "\n",
+    "window-rewrite": {},
+    "tooltip": true,
+    "tooltip-format": "{active_client}", 
     "show-special": true,
   },
 
@@ -55,7 +46,7 @@
   "clock": {
     "format": "  {:%H:%M}",
     "tooltip": false,
-    "format-alt": "🗓️ {:%d-%m-%Y}" // Tıkladığında tarihe dönüşmesini istersen
+    "format-alt": "🗓️ {:%a, %d %B %Y}"
   },
 
   "cpu": {

@@ -1,89 +1,109 @@
 * {
-  font-family: JetBrainsMono Nerd Font;
+  font-family: "JetBrainsMono Nerd Font", "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 13px;
+  font-weight: 900;
   border: none;
 }
 
 window#waybar {
   background: transparent;
+  /* Barın zıplamasını engellemek için sabit alan bırakıyoruz */
+  min-height: 45px; 
 }
 
-/* 🔥 glass bar */
+/* 🔥 ETKİLEYİCİ VE KALIN KAPSÜL GRUPLARI */
 .modules-left,
 .modules-center,
 .modules-right {
-  background: rgba(30, 30, 46, 0.6);
-  border-radius: 12px;
-  margin: 4px;
-  padding: 4px 8px;
+  background: rgba(10, 10, 10, 0.95);
+  border: 2px solid #ff0000;      /* Border bir tık kalınlaştı */
+  border-radius: 25px;            /* Daha yuvarlak hatlar */
+  padding: 5px 15px;              /* İçeriyi doldurduk, daha kalın duruyor */
+  margin: 5px 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s cubic-bezier(.55,-0.04,.3,1.44);
 }
 
-/* workspace buttons */
+/* 🎯 WORKSPACES */
 #workspaces button {
-  color: #cdd6f4;
-  padding: 4px 8px;
-  margin: 0 2px;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  padding: 4px 12px;             /* Butonlar daha dolgun */
+  margin: 0 3px;
+  color: #ffffff;
+  border-radius: 15px;
+  transition: all 0.3s ease;
 }
 
 #workspaces button.active {
-  background: #89b4fa;
-  color: #1e1e2e;
+  background: #ff0000;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
 #workspaces button:hover {
-  background: rgba(137, 180, 250, 0.3);
+  background: #ffffff;
+  color: #ff0000;
+  box-shadow: 0 0 15px #ffffff;
 }
 
-#workspaces button.occupied {
-    color: #fab387; /* Tokyo Night turuncusu gibi bir renk */
-}
-
-/* Seçili olan workspace */
-#workspaces button.active {
-    background: #89b4fa;
-    color: #1e1e2e;
-}
-
-/* modules */
-#language,
-#clock,
-#cpu,
-#memory,
-#battery,
-#network,
-#pulseaudio {
-  padding: 4px 10px;
-  margin: 0 4px;
-  border-radius: 8px;
-  background: rgba(49, 50, 68, 0.5);
-}
-
+/* 🎵 MÜZİK (Geniş ve Belirgin) */
 #custom-music {
-  padding: 4px 10px;
-  margin: 0 4px;
-  border-radius: 8px;
-  min-width: 150px;
+  background: linear-gradient(45deg, #ff0000, #660000);
+  color: white;
+  margin: 0 10px;
+  padding: 2px 18px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
 }
 
-/* hover efekti */
-#language:hover,
-#clock:hover,
-#cpu:hover,
-#memory:hover,
-#battery:hover,
-#network:hover,
-#pulseaudio:hover,
 #custom-music:hover {
-  background: rgba(137, 180, 250, 0.3);
+  background: #ffffff;
+  color: #ff0000;
+  box-shadow: 0 0 15px #ffffff;
 }
 
-/* battery renk */
-#battery.warning {
-  background: rgba(250, 179, 135, 0.5);
+/* 🕒 SAAT (Neon Vurgulu) */
+#clock {
+  color: #ffffff;
+  padding: 0 12px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
 }
 
+#clock:hover {
+  color: #ff0000;
+  text-shadow: 0 0 12px #ff0000;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ⚙️ SAĞ MODÜLLER */
+#language, #cpu, #memory, #pulseaudio, #network, #battery {
+  padding: 2px 12px;
+  margin: 0 2px;
+  color: #ffffff;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Stabil Hover (Barı titretmez) */
+#language:hover, 
+#cpu:hover, 
+#memory:hover, 
+#pulseaudio:hover, 
+#network:hover, 
+#battery:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #ff0000;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Grup Bazlı Hover Parlaması */
+.modules-left:hover, .modules-center:hover, .modules-right:hover {
+  border-color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+/* 🔋 PİL KRİTİK */
 #battery.critical {
-  background: rgba(243, 139, 168, 0.6);
+  color: #ff0000;
+  background: rgba(255, 255, 255, 0.1);
 }
